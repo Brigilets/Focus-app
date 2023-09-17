@@ -19,10 +19,18 @@ const PATTERN = [
   1 * ONE_SECOND_IN_MS,
 ];
 
-export const Timer = ({ focusSubject, clearSubject }) => {
+export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(0.1);
+
+  const onEnd = (reset) => {
+    Vibration.vibrate(PATTERN);
+    setIsStarted(false);
+    setProgress(1);
+    reset();
+    onTimerEnd(focusSubject);
+  };
 
   return (
     <View style={styles.container}>
@@ -31,10 +39,7 @@ export const Timer = ({ focusSubject, clearSubject }) => {
           minutes={minutes}
           isPaused={!isStarted}
           onProgress={setProgress}
-          onEnd={() => {
-            console.log("vibrating");
-            Vibration.vibrate(PATTERN);
-          }}
+          onEnd={onEnd}
         />
 
         <View style={{ paddingTop: spacing.xxl }}>
