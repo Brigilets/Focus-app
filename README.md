@@ -4,7 +4,7 @@
 - Expo CLI installed on your local machine
 
 ## Running the project
-- Via [Focus app]([(https://chat.expo.dev/)](https://snack.expo.dev/@brigilets/focustime))
+- Via [Focus app](https://snack.expo.dev/@brigilets/focustime)
 
 Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
 
