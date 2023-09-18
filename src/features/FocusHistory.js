@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
+
 import { colors } from "../utils/colors";
 import { fontSizes, spacing } from "../utils/sizes";
 
